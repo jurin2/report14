@@ -1,0 +1,47 @@
+// 포트폴리오 클릭 이벤트
+    $('.portfolio .port-tit ul li').on({
+        'click':function(){
+            $('.portfolio .port-tit ul li').removeClass('active');
+            $('.portfolio .port-conts .port').removeClass('active');
+            $(this).addClass('active');
+            let acIdx = $('.portfolio .port-tit ul li').index(this);
+            $('.portfolio .port-conts .port').eq(acIdx).addClass('active');
+            
+        }
+    })
+
+// 클릭시 홈페이지 이동
+let githubURL = ['https://github.com/jurin2/indigo_m','https://github.com/jurin2/travel','https://github.com/jurin2/hollys','https://github.com/jurin2/paikdabang','https://github.com/jurin2/megabox'];
+let siteURL = ['https://jurin2.github.io/indigo_m','https://jurin2.github.io/travel','https://jurin2.github.io/hollys','https://jurin2.github.io/paikdabang','https://jurin2.github.io/megabox'];
+let btnGithub = document.getElementsByClassName('btnGithub');
+let btnSite = document.getElementsByClassName('btnSite');
+
+for(let idx=0; idx<btnGithub.length; idx++){
+    btnGithub[idx].addEventListener('click',()=>{
+        window.open(githubURL[idx],'_blank');
+    })
+}
+for(let idx=0; idx<btnSite.length; idx++){
+    btnSite[idx].addEventListener('click',()=>{
+        window.open(siteURL[idx],'_blank');
+    })
+}
+
+// 모바일 네비게이션 토글버튼
+let tglNav = document.getElementById('tgl-nav');
+
+tglNav.addEventListener('click',()=>{
+    let navEls = document.querySelectorAll('#main-nav a');
+    let mainNavEl = document.querySelector('.main-nav-container');
+    let wrapperEl = document.querySelector('.wrap');
+    let mainNavState = mainNavEl.classList.contains('lock');
+
+    if(mainNavState){
+        myObj.unLock(mainNavEl);
+        myObj.unLock(wrapperEl);
+    }else{
+        myObj.lock(mainNavEl);
+        myObj.lock(wrapperEl);
+        myObj.setNav(navEls,wrapperEl,mainNavEl);
+    } 
+})

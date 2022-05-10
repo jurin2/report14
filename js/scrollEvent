@@ -1,0 +1,9 @@
+// window scroll 이벤트
+window.addEventListener('scroll',function(){
+    let hEl = document.querySelector('header');
+    if(window.scrollY>10){
+        myObj.lock(hEl);
+    }else{
+        myObj.unLock(hEl);
+    }
+})

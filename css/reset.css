@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 여백 초기화 */
+html,body,header,section,footer,h1,h2,h3,h4,h5,h6,p,span,img,ul,ol,li,div,a,address,button{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 폰트 초기화 */
+h1,h2,h3,h4,h5,h6,b,strong{
+    font-weight: 400;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+address,i,em{
+    font-style: normal;
+}
+
+/* 목록 초기화 */
+ul,ol,li{
+    list-style: none;
+}
+
+/* 이미지 초기화 */
+img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/* float 초기화 */
+.clearfix{
+    display: block;
+    content: '';
+    clear: both;
+}
